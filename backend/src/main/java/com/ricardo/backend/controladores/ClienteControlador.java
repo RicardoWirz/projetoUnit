@@ -2,7 +2,6 @@ package com.ricardo.backend.controladores;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,8 +38,8 @@ public class ClienteControlador {
 	
 	// Método responsável por recuperar um cliente pelo id
 	@GetMapping("/{id}")
-	public ResponseEntity<Optional<Cliente>> clientePorId(@PathVariable Integer id){
-		Optional<Cliente> cliente = clienteServico.clientePorID(id);
+	public ResponseEntity<Cliente> clientePorId(@PathVariable Integer id){
+		Cliente cliente = clienteServico.clientePorID(id);
 		return ResponseEntity.ok().body(cliente);
 	}
 	
@@ -52,5 +52,13 @@ public class ClienteControlador {
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(cliente.getId()).toUri();
 		// Retorna uma resposta HTTP com o código 201 (CREATED) e insere no corpo da página o cliente criado 
 		return ResponseEntity.created(uri).body(cliente);
+	}
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<Cliente> atualizarCliente(@PathVariable Integer id, @RequestBody Cliente cliente) {
+		cliente.setId(id);
+		cliente = clienteServico.atualizarCliente(cliente);
+		// Retorna uma resposta HTTP com o código 200 (OK), atualiza o cliente no banco e insere no corpo da página os dados atualizados
+		return ResponseEntity.ok().body(cliente);
 	}
 }

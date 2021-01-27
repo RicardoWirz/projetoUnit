@@ -21,14 +21,28 @@ public class ClienteServico {
 		return clienteRepositorio.findAll();
 	}
 	
-	public Optional<Cliente> clientePorID(Integer id) {
-		return clienteRepositorio.findById(id);
+	public Cliente clientePorID(Integer id) {
+		Optional<Cliente> cliente = clienteRepositorio.findById(id);
+		return cliente.orElse(null) ;
 	}
 
 	public Cliente inserirCliente(Cliente cliente) {
 		// Garante que o id vai ser gerado automaticamente pelo banco de dados
 		cliente.setId(null);
 		return clienteRepositorio.save(cliente);
+	}
+
+	public Cliente atualizarCliente(Cliente cliente) {
+		Cliente dadosAtualizados = clientePorID(cliente.getId());
+		dadosAtualizados.setApelido(cliente.getApelido());
+		dadosAtualizados.setCpf(cliente.getCpf());
+		dadosAtualizados.setDataNascimento(cliente.getDataNascimento());
+		dadosAtualizados.setEmail(cliente.getEmail());
+		dadosAtualizados.setNome(cliente.getNome());
+		dadosAtualizados.setNomeSocial(cliente.getNomeSocial());
+		dadosAtualizados.setSexo(cliente.getSexo());
+		dadosAtualizados.setTelefone(cliente.getTelefone());
+		return clienteRepositorio.save(dadosAtualizados);
 	}
 
 }
