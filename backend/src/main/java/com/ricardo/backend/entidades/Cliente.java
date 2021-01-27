@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+// Entidade Cliente e seus atributos
 @Entity
 public class Cliente implements Serializable{
 	private static final long serialVersionUID = -2460643265715148691L;
