@@ -1,11 +1,13 @@
 package com.ricardo.backend.controladores;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,6 +29,13 @@ public class ClienteControlador {
 		// Lista de clientes recuperados do banco de dados
 		List<Cliente> listaClientes = clienteServico.listarClientes();
 		// Retorna uma resposta HTTP com o código 200 (OK) e insere no corpo da página a lista de clientes
-		return ResponseEntity.ok(listaClientes);
+		return ResponseEntity.ok().body(listaClientes);
+	}
+	
+	// Método responsável por recuperar um cliente pelo id
+	@GetMapping("/{id}")
+	public ResponseEntity<Optional<Cliente>> clientePorId(@PathVariable Integer id){
+		Optional<Cliente> cliente = clienteServico.clientePorID(id);
+		return ResponseEntity.ok().body(cliente);
 	}
 }
