@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClientesService {
 
-  backend ='http://localhost:8080/clientes'
+  backend ='https://lojadoricardo.herokuapp.com/clientes'
 
   constructor(private http: HttpClient) { }
 
