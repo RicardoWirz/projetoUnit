@@ -1,8 +1,9 @@
 package com.ricardo.backend.repositorios;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public class ClienteRepositorio {
+import com.ricardo.backend.entidades.Cliente;
+
+public interface ClienteRepositorio extends JpaRepository<Cliente, Long>{
 
 }
