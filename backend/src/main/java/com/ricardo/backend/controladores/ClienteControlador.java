@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -60,5 +61,12 @@ public class ClienteControlador {
 		cliente = clienteServico.atualizarCliente(cliente);
 		// Retorna uma resposta HTTP com o código 200 (OK), atualiza o cliente no banco e insere no corpo da página os dados atualizados
 		return ResponseEntity.ok().body(cliente);
+	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> deletarCliente(@PathVariable Integer id) {
+		clienteServico.deletarCliente(id);
+		// Retorna uma resposta sem conteúdo e o cliente é deletado
+		return ResponseEntity.noContent().build();
 	}
 }

@@ -45,4 +45,8 @@ public class ClienteServico {
 		return clienteRepositorio.save(dadosAtualizados);
 	}
 
+	public void deletarCliente(Integer id) {
+		clienteRepositorio.deleteById(id);
+	}
+
 }
