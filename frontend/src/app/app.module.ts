@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CabecalhoComponent } from './componentes/views/cabecalho/cabecalho.component';
 import { PaginaInicialComponent } from './componentes/views/pagina-inicial/pagina-inicial.component';
+import { ClientesComponent } from './componentes/views/clientes/clientes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CabecalhoComponent,
     PaginaInicialComponent,
+    ClientesComponent,
   ],
   imports: [
     BrowserModule,
