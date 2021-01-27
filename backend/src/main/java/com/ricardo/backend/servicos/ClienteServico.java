@@ -25,4 +25,10 @@ public class ClienteServico {
 		return clienteRepositorio.findById(id);
 	}
 
+	public Cliente inserirCliente(Cliente cliente) {
+		// Garante que o id vai ser gerado automaticamente pelo banco de dados
+		cliente.setId(null);
+		return clienteRepositorio.save(cliente);
+	}
+
 }
