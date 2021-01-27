@@ -1,0 +1,33 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">CPF</th>
+    <th scope="col">Nome</th>
+    <th scope="col">Email</th>
+    <th scope="col">Data de Nascimento</th>
+    <th scope="col">Sexo</th>
+    <th scope="col">Nome Social</th>
+    <th scope="col">Apelido</th>
+    <th scope="col">Telefone</th>
+    <th scope="col">Opções</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cliente of clientes">
+    <td>{{ cliente.id }}</td>
+    <td>{{ cliente.cpf }}</td>
+    <td>{{ cliente.nome }}</td>
+    <td>{{ cliente.email }}</td>
+    <td>{{ cliente.dataNascimento | date: "dd/MM/yyyy" }}</td>
+    <td>{{ cliente.sexo }}</td>
+    <td>{{ cliente.nomeSocial }}</td>
+    <td>{{ cliente.apelido }}</td>
+    <td>{{ cliente.telefone }}</td>
+    <td>
+      <a class="atualizar" routerLink="/clientes/atualizar/{{ cliente.id }}">Atualizar</a>
+      <a class="deletar" routerLink="/clientes/deletar/{{ cliente.id }}">Deletar</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

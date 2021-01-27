@@ -1,0 +1,15 @@
+table{
+  margin-top: 20px;
+}
+
+a{
+  margin-right: 5px;
+}
+
+.atualizar {
+  color: green;
+}
+
+.deletar {
+  color: red;
+}

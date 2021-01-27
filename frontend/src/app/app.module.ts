@@ -8,6 +8,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CabecalhoComponent } from './componentes/views/cabecalho/cabecalho.component';
 import { PaginaInicialComponent } from './componentes/views/pagina-inicial/pagina-inicial.component';
 import { ClientesComponent } from './componentes/views/clientes/clientes.component';
+import { ClientesLerComponent } from './componentes/views/clientes/crud/clientes-ler/clientes-ler.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { ClientesComponent } from './componentes/views/clientes/clientes.compone
     CabecalhoComponent,
     PaginaInicialComponent,
     ClientesComponent,
+    ClientesLerComponent,
   ],
   imports: [
     BrowserModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
