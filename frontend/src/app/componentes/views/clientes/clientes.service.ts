@@ -16,4 +16,8 @@ export class ClientesService {
     return this.http.get<Cliente[]>(this.backend)
   }
 
+  inserirCliente(cliente: Cliente): Observable<Cliente>{
+    return this.http.post<Cliente>(this.backend, cliente)
+  }
+
 }
