@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ClientesCriarComponent } from './componentes/views/clientes/crud/clientes-criar/clientes-criar.component';
 
 import { TextMaskModule } from 'angular2-text-mask';
+import { ClientesAtualizarComponent } from './componentes/views/clientes/crud/clientes-atualizar/clientes-atualizar.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TextMaskModule } from 'angular2-text-mask';
     ClientesComponent,
     ClientesLerComponent,
     ClientesCriarComponent,
+    ClientesAtualizarComponent,
   ],
   imports: [
     BrowserModule,

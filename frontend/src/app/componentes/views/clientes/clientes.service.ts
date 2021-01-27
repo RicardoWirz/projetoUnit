@@ -20,4 +20,12 @@ export class ClientesService {
     return this.http.post<Cliente>(this.backend, cliente)
   }
 
+  clientePorID(id: string): Observable <Cliente>{
+    return this.http.get<Cliente>(`${this.backend}/${id}`)
+  }
+
+  atualizarCliente(cliente: Cliente): Observable<Cliente>{
+    return this.http.put<Cliente>(`${this.backend}/${cliente.id}`, cliente)
+  }
+
 }

@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="d-flex justify-content-center mt-3">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h2>Cadastrar Cliente</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+
+            <form>
+              <div class="form-group">
+                <input name="cpf" class="form-control" placeholder="CPF" minlength="14" maxlength="17" [(ngModel)]="cliente.cpf" [textMask]="{mask: cpf}">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="nome" class="form-control" placeholder="Nome" minlength="3" [(ngModel)]="cliente.nome">
+              </div>
+
+              <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="cliente.email">
+              </div>
+
+              <div class="form-group">
+                <input type="date" name="dataNascimento" class="form-control" [(ngModel)]="cliente.dataNascimento">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="sexo" class="form-control" placeholder="Sexo" maxlength="20" [(ngModel)]="cliente.sexo">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="nomeSocial" class="form-control" placeholder="Nome Social" maxlength="100" [(ngModel)]="cliente.nomeSocial">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="apelido" class="form-control" placeholder="Apelido" maxlength="100" [(ngModel)]="cliente.apelido">
+              </div>
+
+              <div class="form-group">
+                <input [(ngModel)]="cliente.telefone" name="telefone" class="form-control" placeholder="Telefone" minlength="16" maxlength="16" [textMask]="{mask: telefone}">
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" (click)="atualizarCliente()">Cadastrar</button>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
