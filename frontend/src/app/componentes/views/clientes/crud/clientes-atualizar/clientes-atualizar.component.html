@@ -4,7 +4,7 @@
       <div class="card-body">
         <div class="row">
           <div class="col">
-            <h2>Cadastrar Cliente</h2>
+            <h2>Atualizar Cliente</h2>
           </div>
         </div>
 
@@ -44,7 +44,7 @@
                 <input [(ngModel)]="cliente.telefone" name="telefone" class="form-control" placeholder="Telefone" minlength="16" maxlength="16" [textMask]="{mask: telefone}">
               </div>
 
-              <button type="submit" class="btn btn-primary btn-block" (click)="atualizarCliente()">Cadastrar</button>
+              <button type="submit" class="btn btn-success btn-block" (click)="atualizarCliente()">Atualizar</button>
 
             </form>
 

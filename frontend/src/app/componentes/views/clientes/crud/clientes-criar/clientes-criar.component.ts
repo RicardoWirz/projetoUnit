@@ -34,9 +34,7 @@ export class ClientesCriarComponent implements OnInit {
     this.service.inserirCliente(this.cliente).subscribe(() => {
     })
     this.router.navigate(['/clientes'])
-    setTimeout(function () {
-      alert("Cliente cadastrado com sucesso!")
-    }, 500);
+    alert("Cliente cadastrado com sucesso!")
   }
 
 }

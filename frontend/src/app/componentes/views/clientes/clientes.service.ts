@@ -28,4 +28,8 @@ export class ClientesService {
     return this.http.put<Cliente>(`${this.backend}/${cliente.id}`, cliente)
   }
 
+  deletarCliente(id: number): Observable <Cliente>{
+    return this.http.delete<Cliente>(`${this.backend}/${id}`)
+  }
+
 }

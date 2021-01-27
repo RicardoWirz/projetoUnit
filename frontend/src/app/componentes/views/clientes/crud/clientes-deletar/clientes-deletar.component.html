@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="d-flex justify-content-center mt-3">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h2>Deletar Cliente</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+
+            <form>
+              <div class="form-group">
+                <input name="cpf" class="form-control" placeholder="CPF" minlength="14" maxlength="17" [(ngModel)]="cliente.cpf" [textMask]="{mask: cpf}" disabled>
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="nome" class="form-control" placeholder="Nome" minlength="3" [(ngModel)]="cliente.nome" disabled>
+              </div>
+
+              <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="cliente.email" disabled>
+              </div>
+
+              <div class="form-group">
+                <input type="date" name="dataNascimento" class="form-control" value="{{cliente.dataNascimento | date: 'yyyy-MM-dd'}}" disabled>
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="sexo" class="form-control" placeholder="Sexo" maxlength="20" [(ngModel)]="cliente.sexo" disabled>
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="nomeSocial" class="form-control" placeholder="Nome Social" maxlength="100" [(ngModel)]="cliente.nomeSocial" disabled>
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="apelido" class="form-control" placeholder="Apelido" maxlength="100" [(ngModel)]="cliente.apelido" disabled>
+              </div>
+
+              <div class="form-group">
+                <input [(ngModel)]="cliente.telefone" name="telefone" class="form-control" placeholder="Telefone" minlength="16" maxlength="16" [textMask]="{mask: telefone}" disabled>
+              </div>
+
+              <button class="btn btn-danger btn-block" (click)="deletarCliente()">Deletar</button>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
